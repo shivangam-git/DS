@@ -36,16 +36,13 @@ public class CreateLinkedList {
 		nn.data = item;
 		nn.next = null;
 
-		// attach newly added node to the previous node
-		if (this.size >= 1) {
-			this.tail.next = nn;// give previous node the address of newly added node
-		}
 		// update object summary
 		if (this.size == 0) {
 			this.head = nn;
 			this.tail = nn;
 			this.size++;
 		} else {
+			this.tail.next = nn;// give previous node the address of newly added node
 			this.tail = nn;// updating tail
 			this.size++;
 		}
